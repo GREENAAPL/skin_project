@@ -1,0 +1,7 @@
+experiment:
+  run_name: base
+  seed: 42
+
+logging:
+  tensorboard_root: runs/tensorboard
+  checkpoint_root: outputs/checkpoints

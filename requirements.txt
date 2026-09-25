@@ -1,0 +1,13 @@
+# Reproducible environment used for the EfficientNet-B0 experiments.
+# For GPU wheels install torch/torchvision from the PyTorch index first, e.g.:
+#   pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0
+torchvision==0.21.0
+pandas==3.0.3
+numpy==2.4.4
+scikit-learn==1.9.0
+Pillow==12.2.0
+matplotlib==3.11.1
+PyYAML==6.0.3
+tensorboard==2.21.0
+pytest==9.1.1

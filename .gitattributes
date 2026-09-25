@@ -1,0 +1,14 @@
+# Normalise line endings in the repository to LF.
+#
+# This keeps diffs consistent between Windows and Linux.
+* text=auto eol=lf
+
+# Binary assets: never touch these.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pt binary
+*.pth binary
+*.tar.gz binary
+*.npy binary
+*.npz binary

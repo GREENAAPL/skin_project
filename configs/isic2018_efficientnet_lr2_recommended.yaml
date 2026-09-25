@@ -1,0 +1,9 @@
+# Differential-LR experiment 2: recommended 10:1 head/backbone ratio.
+defaults: [isic2018_7class_efficientnet_b0_320.yaml]
+
+experiment:
+  run_name: isic2018_effnet_lr2_recommended
+
+training:
+  backbone_learning_rate: 0.00005
+  classifier_learning_rate: 0.0005

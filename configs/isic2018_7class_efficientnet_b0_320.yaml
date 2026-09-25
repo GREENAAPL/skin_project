@@ -1,0 +1,47 @@
+# Final image-only EfficientNet-B0 model for ISIC 2018 seven-class classification.
+defaults: [base.yaml]
+
+experiment:
+  run_name: isic2018_7class_efficientnet_b0_320
+
+data:
+  root: data/isic2018
+  train_metadata: prepared/train_metadata.csv
+  dev_metadata: prepared/dev_metadata.csv
+  train_images: raw/ISIC2018_Task3_Training_Input
+  dev_images: raw/ISIC2018_Task3_Training_Input
+  image_size: 320
+  image_ext: .jpg
+  num_workers: 4
+  # lesion_id is used only for a leakage-free split, never as model input.
+  class_names: [MEL, NV, BCC, AKIEC, BKL, DF, VASC]
+
+model:
+  type: efficientnet_b0
+  backbone: efficientnet_b0
+  num_classes: 7
+  pretrained: true
+  freeze_encoder: true
+  unfreeze_last_blocks: 4
+  dropout: 0.3
+
+training:
+  batch_size: 32
+  epochs: 20
+  learning_rate: 0.0002
+  backbone_learning_rate: 0.0002
+  classifier_learning_rate: 0.0002
+  weight_decay: 0.0001
+  optimizer: adamw
+  scheduler: cosine
+  use_class_weights: true
+  label_smoothing: 0.05
+  augment:
+    random_resized_crop: true
+    crop_scale_min: 0.85
+    crop_scale_max: 1.0
+    horizontal_flip: true
+    vertical_flip: true
+    rotation: 20
+    color_jitter: 0.0
+    brightness_jitter: 0.0

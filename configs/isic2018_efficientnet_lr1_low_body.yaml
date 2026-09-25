@@ -1,0 +1,9 @@
+# Differential-LR experiment 1: lower only the pretrained backbone LR.
+defaults: [isic2018_7class_efficientnet_b0_320.yaml]
+
+experiment:
+  run_name: isic2018_effnet_lr1_low_body
+
+training:
+  backbone_learning_rate: 0.00005
+  classifier_learning_rate: 0.0002

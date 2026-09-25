@@ -1,0 +1,17 @@
+# Datasets and generated splits are downloaded locally.
+data/
+
+# Heavy run artifacts.
+runs/tensorboard/*/
+outputs/
+*.pt
+*.zip
+*.tar.gz
+
+# Python.
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
